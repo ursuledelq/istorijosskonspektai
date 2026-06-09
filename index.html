@@ -531,6 +531,72 @@
       .preview::after{ animation:none; }
       .blink{ animation:none; }
     }
+     .authors-panel{
+    border: 2px solid rgba(0,0,0,.35);
+    background: #d1d1d1;
+    border-radius: var(--radius);
+    padding: 10px;
+  }
+  .authors-panel .ah{
+    font-weight: 900;
+    font-size: 12px;
+    opacity: .9;
+    margin-bottom: 10px;
+    letter-spacing: .2px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .author-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .author-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .avatar {
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(0,0,0,.55);
+  border-radius: var(--radius);
+  /* Keep your current background properties here as a fallback! */
+  background: linear-gradient(135deg, rgba(13,86,255,.35), rgba(53,255,114,.25)), repeating-linear-gradient(90deg, rgba(0,0,0,.15) 0 2px, transparent 2px 6px), #bdbdbd;
+  box-shadow: 0 2px 0 rgba(255,255,255,.55) inset;
+  flex: 0 0 auto;
+  overflow: hidden; /* CRITICAL: This keeps the image inside the rounded corners */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes sure the image fills the square without stretching */
+  display: block;
+}
+  .author-name{
+    font-weight: 1000;
+    font-size: 13px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .author-role{
+    font-size: 12px;
+    font-weight: 800;
+    opacity: .85;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .author-text{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
   </style>
 </head>
 
@@ -605,6 +671,51 @@
             </div>
           </div>
         </div>
+        <div class="authors-panel" aria-label="System Panel authors">
+  <div class="ah">
+    <span>Authors</span>
+    <span style="font-size:12px; font-weight:900; opacity:.9;"> {3} results</span>
+  </div>
+
+  <div class="author-list">
+    <div class="author-item">
+      <div class="avatar" aria-hidden="true">
+  <img src="https://i.pinimg.com/1200x/e0/1c/c4/e01cc4f98b15302214a649a3b061ae90.jpg" alt=""></div>
+      <div class="author-text">
+        <div class="author-name">istorija.exe</div>
+        <div class="author-role">maketuotojas / istorija</div>
+      </div>
+    </div>
+
+    <div class="author-item">
+      <div class="avatar" aria-hidden="true">
+  <img src="https://i.pinimg.com/1200x/dc/6b/d3/dc6bd3568af68d8614c3dc19e75822e4.jpg" alt=""> 
+</div>
+      <div class="author-text">
+        <div class="author-name">diplomatija.io</div>
+        <div class="author-role">rašytojas / geopolitika</div>
+      </div>
+    </div>
+
+    <div class="author-item">
+      <div class="avatar" aria-hidden="true">
+  <img src="https://i.pinimg.com/1200x/c2/e1/c5/c2e1c5867d01fa016fa47036a12560be.jpg" alt=""></div>
+      <div class="author-text">
+        <div class="author-name">global.net</div>
+        <div class="author-role">tyryba / pasaulis</div>
+      </div>
+    </div>
+  </div>
+   <div class="author-item">
+      <div class="avatar" aria-hidden="true">
+  <img src="https://i.pinimg.com/1200x/64/fd/9e/64fd9e71b07a0ea2f87ee45d2a65ceb2.jpg" alt=""> 
+</div>
+      <div class="author-text">
+        <div class="author-name">ldk.history</div>
+        <div class="author-role">rašytojas / LDK istorikas/ patriotas</div>
+      </div>
+    </div>
+</div>
       </aside>
 
       <main class="main">
