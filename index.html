@@ -499,6 +499,26 @@
       gap:10px;
       background: linear-gradient(180deg, #d0d0d0, #c0c0c0);
     }
+    .modal { 
+    max-height: min(86vh, 760px); /* keeps modal from going off-screen */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal .mbody{
+    flex: 1;                 /* take remaining height */
+    overflow: auto;         /* scroll the content area */
+    min-height: 0;         /* important for flex scrolling */
+  }
+
+  .modal .actions{
+    flex: 0 0 auto;         /* keep Close button visible */
+  }
+
+  /* (optional) make long words/images behave nicely inside modal */
+  #modalContent{
+    max-width: 100%;
+  }
 
     .statusbar{
       padding: 10px 14px;
@@ -611,6 +631,61 @@
   width:100%;
   height:auto;
 }
+.post-content{
+  font-size:14px;
+  font-weight:700;
+  line-height:1.5;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+
+figure.blog-figure{
+    margin: 10px 14px 10px 0;  /* right side spacing */
+    float: right;              /* side-by-side with text */
+    width: 320px;             /* fixed-ish width to avoid oversizing */
+    max-width: 40%;          /* responsive safety */
+  }
+
+  /* image should fill the figure box but not dominate */
+  figure.blog-figure img.blog-image{
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0;
+    display: block;
+    border: 2px solid rgba(0,0,0,.35);
+    border-radius: 2px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.18);
+    background: rgba(255,255,255,.25);
+  }
+
+  /* if you keep a class .blog-image, ensure it behaves */
+  .blog-image{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* important: clearfix so following content doesn’t wrap oddly */
+  #modalContent::after{
+    content:"";
+    display:block;
+    clear: both;
+  }
+
+  /* on small screens, stop floating so it becomes “normal” stacked layout */
+  @media (max-width: 700px){
+    figure.blog-figure{
+      float: none;
+      margin: 12px auto;
+      max-width: 320px;
+      width: 100%;
+    }
+    #modalContent::after{
+      clear: none;
+    }
+  }
+
   </style>
 </head>
 
@@ -675,7 +750,7 @@
 
           <div class="meter" style="background:#d1d1d1;">
             <div class="row">
-              <span>Spartieji klavišai</span>
+              <span>Quick Keys</span>
               <span class="kbd">Ctrl</span>
             </div>
             <div style="font-size:12px; font-weight:800; margin-top:8px; opacity:.95; line-height:1.35;">
@@ -688,7 +763,7 @@
         <div class="authors-panel" aria-label="System Panel authors">
   <div class="ah">
     <span>Authors</span>
-    <span style="font-size:12px; font-weight:900; opacity:.9;"> {5} results</span>
+    <span style="font-size:12px; font-weight:900; opacity:.9;"> {4} results</span>
   </div>
 
   <div class="author-list">
@@ -820,7 +895,11 @@
         content: "I. SENOVĖS PASAULIO KONFLIKTAI (Graikų, romėnų ir persų karai)\n\n" +
                  "PAGRINDINĖ MINTIS:\n" +
                  "Senovės pasaulyje karai nulėmė valstybių plėtrą, kultūrų maišymąsi ir karo meno raidą. Dideli karvedžiai kūrė imperijas, o mūšiai keitė Europos ir Artimųjų Rytų istoriją.\n\n" +
-                 "KARVEDŽIAI:\n" +
+"<figure class='blog-figure'>" +
+"  <img class='blog-image' src='https://i.pinimg.com/736x/06/9d/37/069d3758dba162bed9b120165beac9bc.jpg' alt='Senovės pasaulio karų iliustracija' />" +
+
+"</figure>\n\n" +
+"KARVEDŽIAI:\n" +
                  "• Aleksandras Makedonietis\n" +
                  "  - Užkariavo Persų imperiją.\n" +
                  "  - Skleidė helenizmą.\n" +
@@ -1512,7 +1591,7 @@
       if (!post) return;
       if (document.getElementById('modalTitle')) document.getElementById('modalTitle').textContent = post.title;
       if (document.getElementById('modalSub')) document.getElementById('modalSub').textContent = `By ${post.author} | ${post.date} | Category: ${post.category}`;
-      if (document.getElementById('modalContent')) document.getElementById('modalContent').textContent = post.content;
+      if (document.getElementById('modalContent')) document.getElementById('modalContent').innerHTML = post.content;
       if (modalBackdrop) modalBackdrop.classList.add('show');
     };
 
