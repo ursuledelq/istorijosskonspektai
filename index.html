@@ -2452,7 +2452,6 @@ content: "LDK SOCIALINĖ-EKONOMINĖ STRUKTŪRA XIV–XVIII A.\n\n" +
   currentCategory === 'All' ? true :
   currentCategory === 'pasaulis' ? post.category !== 'Lietuva' :
   post.category === currentCategory;
-
         const matchesSearch = post.title.toLowerCase().includes(query) ||
                               post.excerpt.toLowerCase().includes(query) ||
                               post.tags.some(t => t.toLowerCase().includes(query));
@@ -2502,11 +2501,10 @@ content: "LDK SOCIALINĖ-EKONOMINĖ STRUKTŪRA XIV–XVIII A.\n\n" +
       `).join('');
     }
 
-     const chips = {
+    const chips = {
   'All': document.getElementById('chipAll'),
   'Lietuva': document.getElementById('chipDesign'),
   'pasaulis': document.getElementById('chipDev')
-};
     };
 
     Object.keys(chips).forEach(cat => {
