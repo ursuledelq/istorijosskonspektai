@@ -6,12 +6,12 @@
   <title>Delarnet</title>
   <style>
     :root{
-      --bg: #8aa0b8;         /* icy blue */
-      --panel: #c7c7c7;      /* 2000s UI gray */
+      --bg: #8aa0b8;         
+      --panel: #c7c7c7;      
       --panel2:#bdbdbd;
       --ink:#0b0b0b;
       --link:#1a4fff;
-      --accent:#0d56ff;      /* blue highlight */
+      --accent:#0d56ff;     
       --green:#35ff72;
       --danger:#ff4040;
       --shadow: rgba(0,0,0,.35);
@@ -500,22 +500,22 @@
       background: linear-gradient(180deg, #d0d0d0, #c0c0c0);
     }
     .modal { 
-    max-height: min(86vh, 760px); /* keeps modal from going off-screen */
+    max-height: min(86vh, 760px); 
     display: flex;
     flex-direction: column;
   }
 
   .modal .mbody{
-    flex: 1;                 /* take remaining height */
-    overflow: auto;         /* scroll the content area */
-    min-height: 0;         /* important for flex scrolling */
+    flex: 1;                
+    overflow: auto;         
+    min-height: 0;        
   }
 
   .modal .actions{
-    flex: 0 0 auto;         /* keep Close button visible */
+    flex: 0 0 auto;        
   }
 
-  /* (optional) make long words/images behave nicely inside modal */
+  
   #modalContent{
     max-width: 100%;
   }
@@ -588,13 +588,13 @@
   background: linear-gradient(135deg, rgba(13,86,255,.35), rgba(53,255,114,.25)), repeating-linear-gradient(90deg, rgba(0,0,0,.15) 0 2px, transparent 2px 6px), #bdbdbd;
   box-shadow: 0 2px 0 rgba(255,255,255,.55) inset;
   flex: 0 0 auto;
-  overflow: hidden; /* CRITICAL: This keeps the image inside the rounded corners */
+  overflow: hidden; 
 }
 
 .avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This makes sure the image fills the square without stretching */
+  object-fit: cover; 
   display: block;
 }
   .author-name{
@@ -640,13 +640,13 @@
 }
 
 figure.blog-figure{
-    margin: 10px 14px 10px 0;  /* right side spacing */
-    float: right;              /* side-by-side with text */
-    width: 320px;             /* fixed-ish width to avoid oversizing */
-    max-width: 40%;          /* responsive safety */
+    margin: 10px 14px 10px 0;  
+    float: right;              
+    width: 320px;             
+    max-width: 40%;          
   }
 
-  /* image should fill the figure box but not dominate */
+ 
   figure.blog-figure img.blog-image{
     width: 100%;
     max-width: 320px;
@@ -659,21 +659,21 @@ figure.blog-figure{
     background: rgba(255,255,255,.25);
   }
 
-  /* if you keep a class .blog-image, ensure it behaves */
+  
   .blog-image{
     width: 100%;
     height: auto;
     display: block;
   }
 
-  /* important: clearfix so following content doesn’t wrap oddly */
+  
   #modalContent::after{
     content:"";
     display:block;
     clear: both;
   }
 
-  /* on small screens, stop floating so it becomes “normal” stacked layout */
+ 
   @media (max-width: 700px){
     figure.blog-figure{
       float: none;
@@ -685,6 +685,50 @@ figure.blog-figure{
       clear: none;
     }
   }
+.post .preview{
+  width: 100%;
+  height: 120px;               
+  border-radius: 2px;
+  overflow: hidden;
+  border: 2px solid rgba(0,0,0,.45);
+
+  
+  background:
+    linear-gradient(135deg, rgba(13,86,255,.25), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.15) 0 2px, transparent 2px 8px),
+    #bdbdbd;
+  position: relative;
+}
+
+
+.post .preview::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  
+  background: var(--thumb, none);
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+
+.post .preview::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.22), transparent 45%),
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.35));
+  pointer-events:none;
+  opacity:.95;
+}
+
+
+.post .preview::after{
+  animation: none !important;
+}
 
   </style>
 </head>
@@ -763,7 +807,7 @@ figure.blog-figure{
         <div class="authors-panel" aria-label="System Panel authors">
   <div class="ah">
     <span>Authors</span>
-    <span style="font-size:12px; font-weight:900; opacity:.9;"> {4} results</span>
+    <span style="font-size:12px; font-weight:900; opacity:.9;"> {5} results</span>
   </div>
 
   <div class="author-list">
@@ -887,6 +931,7 @@ figure.blog-figure{
       {
         id: 1,
         title: "1. Senovės pasaulio konfliktai: Karvedžiai ir mūšiai",
+        thumbnail: "https://i.pinimg.com/736x/45/9a/e6/459ae6979a7bd7dddf3a6c0e6ff802a5.jpg",
         date: "2026-06-01",
         author: "istorija.exe",
         category: "Antika",
@@ -928,6 +973,7 @@ figure.blog-figure{
       {
         id: 2,
         title: "2. Antikos karinės ir kultūrinės sąvokos",
+        thumbnail: "https://i.pinimg.com/1200x/d2/70/3f/d2703f541c1454f7c9a478c8ec96355c.jpg",
         date: "2026-06-01",
         author: "istorija.exe",
         category: "Antika",
@@ -956,6 +1002,7 @@ figure.blog-figure{
       {
         id: 3,
         title: "3.1. Ikimoderniųjų laikų konfliktai: sąvokos ir esmė",
+        thumbnail: "https://i.pinimg.com/736x/3a/ea/65/3aea65ff2e05519879ebecc7725146d9.jpg",
         date: "2026-06-02",
         author: "diplomatija.io",
         category: "Ikimodernieji",
@@ -975,6 +1022,7 @@ figure.blog-figure{
       {
         id: 4,
         title: "3.2. Trys asmenybės, pakeitusios tarptautinių santykių eigą",
+        thumbnail: "https://i.pinimg.com/736x/2c/e5/82/2ce58219048c90273cde7cbe5ae48d46.jpg",
         date: "2026-06-03",
         author: "diplomatija.io",
         category: "Ikimodernieji",
@@ -994,6 +1042,7 @@ figure.blog-figure{
       {
         id: 5,
         title: "3.3. Valstybė kaip subjektas: nuo Vestfalijos iki Vienos",
+         thumbnail: "https://i.pinimg.com/736x/e3/5b/7f/e35b7f0a6d0696fdc92e72534abf12bb.jpg",
         date: "2026-06-04",
         author: "diplomatija.io",
         category: "Ikimodernieji",
@@ -1011,6 +1060,7 @@ figure.blog-figure{
       {
         id: 6,
         title: "4. XX a. pirmosios pusės totaliniai karai ir doktrinos",
+        thumbnail: "https://i.pinimg.com/1200x/75/6e/cd/756ecdd058fb41092acb057a9901d520.jpg",
         date: "2026-06-03",
         author: "istorija.exe",
         category: "Totaliniai Karai",
@@ -1031,6 +1081,7 @@ figure.blog-figure{
       {
         id: 7,
         title: "4.1 Totalinis karas ir idealizmo žlugimas tarpukariu",
+        thumbnail: "https://i.pinimg.com/736x/3b/cc/37/3bcc3723e36320acb4cb90d8de70d9f0.jpg",
         date: "2026-06-09",
         author: "istorija.exe",
         category: "Totaliniai Karai",
@@ -1674,8 +1725,657 @@ content: "PASEKMĖS\n\n" +
          "• Sustiprėjo valstybių suvereniteto principas.\n" +
          "• Religiniai karai Europoje pradėjo silpnėti."
 },
-      {id: 37,title: "17. Senųjų civilizacijų socialinė-ekonominė struktūra",date: "2026-06-24",author: "istorija.exe",category: "Senovės civilizacijos",tags: ["vergovė", "aristokratija", "Roma"],excerpt: "Senųjų civilizacijų socialinė-ekonominė struktūra: vergovė, socialiniai sluoksniai, miestų reikšmė ir stambūs ūkiai.",content: "SENŲJŲ CIVILIZACIJŲ SOCIALINĖ-EKONOMINĖ STRUKTŪRA\n\n" +"1. SOCIALINĖ PIRAMIDĖ:\n" +"• Senosiose civilizacijose visuomenė buvo suskirstyta į sluoksnius.\n" +"• Žmogaus padėtį dažnai nulėmė kilmė ir prigimtis.\n" +"• Viršuje buvo aristokratija ir valdovai, apačioje – vergai.\n\n" +"2. ELITAS IR ARISTOKRATIJA:\n" +"• Aristokratija – kilmingųjų sluoksnis, valdęs žemes ir turėjęs politinę galią.\n" +"• Romoje svarbų vaidmenį atliko patricijai – kilmingi piliečiai.\n" +"• Plebėjai buvo laisvieji, tačiau turėjo mažiau politinių teisių.\n\n" +"3. VERGOVĖ:\n" +"• Vergovė buvo vienas svarbiausių senųjų civilizacijų ekonomikos pagrindų.\n" +"• Vergai dirbo ūkiuose, statybose ir kasyklose.\n" +"• Pasaulio stebuklų ir didelių statinių statyboje naudotas vergų darbas.\n\n" +"4. MIESTAS IR ŪKIS:\n" +"• Polis – senovės Graikijos miestas-valstybė.\n" +"• Latifundija – stambus žemės ūkio dvaras Senovės Romoje.\n" +"• Vila („villa rustica“) – romėnų kaimo ūkis.\n" +"• Laisvieji žemdirbiai dirbo smulkiuose ūkiuose.\n\n" +"5. SVARBIOS SĄVOKOS:\n" +"• Helotai – priklausomi Spartanų valstiečiai.\n" +"• Kolonai – priklausomi Romos žemdirbiai, nuomoję žemę.\n" +"• Irigacinė sistema – dirbtinis laukų drėkinimas vandeniu.\n" +"• Hamurapio teisynas – Babilono įstatymų rinkinys, reguliavęs visuomenės tvarką.\n\n" +"6. SVARBŪS ASMENYS:\n" +"• Aristotelis teigė, kad visuomenėje natūraliai egzistuoja valdantieji ir pavaldiniai.\n" +"• Tiberijus ir Gajus Grakchai siekė žemės reformų ir norėjo pagerinti plebėjų padėtį.\n\n" +"7. PASEKMĖS:\n" +"• Vergovė stiprino ekonomiką, tačiau didino socialinę nelygybę.\n" +"• Stambūs ūkiai silpnino laisvųjų žemdirbių sluoksnį.\n" +"• Socialiniai konfliktai skatino reformas ir politines krizes."},{id: 36,title: "16. Vienos kongresas ir Paryžiaus taikos konferencija: Palyginimas",date: "2026-06-24",author: "istorija.exe",category: "Tarptautiniai santykiai",tags: ["Vienos kongresas", "Paryžiaus taikos konferencija", "palyginimas"],excerpt: "Vienos kongreso ir Paryžiaus taikos konferencijos palyginimas: priežastys, tikslai, padariniai ir poveikis Europai.",content: "VIENOS KONGRESAS IR PARYŽIAUS TAIKOS KONFERENCIJA – PALYGINIMAS\n\n" +"1. PRIEŽASTYS:\n\n" +"Vienos kongresas (1814–1815):\n" +"• Napoleono karai ir Prancūzijos ekspansija Europoje.\n" +"• Siekis atkurti politinę tvarką po revoliucijų ir karų.\n\n" +"Paryžiaus taikos konferencija (1919):\n" +"• Pirmasis pasaulinis karas.\n" +"• Siekis nustatyti naują pasaulio tvarką po milžiniškų karo nuostolių.\n\n" +"2. PANAŠUMAI:\n" +"• Abi konferencijos vyko po didelių Europos karų.\n" +"• Siekta užtikrinti taiką ir stabilumą Europoje.\n" +"• Spręsti teritoriniai klausimai.\n" +"• Didžiosios valstybės dominavo sprendimų priėmime.\n\n" +"3. SKIRTUMAI:\n\n" +"Vienos kongresas:\n" +"• Remtasi monarchijų ir legitimizmo principu.\n" +"• Siekta jėgų pusiausvyros Europoje.\n" +"• Prancūzija nebuvo smarkiai nubausta.\n\n" +"Paryžiaus taikos konferencija:\n" +"• Akcentuota tautų apsisprendimo teisė.\n" +"• Vokietijai priskirta atsakomybė už karą.\n" +"• Vokietija buvo griežtai nubausta reparacijomis ir teritorijų praradimu.\n\n" +"4. NAUJOVĖS:\n\n" +"Vienos kongresas:\n" +"• Sukurta Europos koncertų sistema.\n" +"• Valstybės bendradarbiavo palaikant tvarką Europoje.\n\n" +"Paryžiaus taikos konferencija:\n" +"• Įkurta Tautų Sąjunga.\n" +"• Plačiau taikyta tautų apsisprendimo idėja.\n\n" +"5. TEIGIAMI ASPEKTAI:\n\n" +"Vienos kongresas:\n" +"• Europoje ilgam išlaikyta santykinė taika.\n" +"• Atkurta politinė pusiausvyra.\n\n" +"Paryžiaus taikos konferencija:\n" +"• Sukurtos naujos valstybės Europoje.\n" +"• Silpnintos agresyvios imperijos.\n\n" +"6. NEIGIAMI ASPEKTAI:\n\n" +"Vienos kongresas:\n" +"• Nepaisė tautinių judėjimų.\n" +"• Slopino liberalias idėjas.\n\n" +"Paryžiaus taikos konferencija:\n" +"• Versalio sutartis sukėlė Vokietijos nepasitenkinimą.\n" +"• Sudarytos prielaidos Antrajam pasauliniam karui.\n\n" +"7. PADARINIAI:\n\n" +"Vienos kongresas:\n" +"• Sustiprėjo konservatyvios monarchijos.\n" +"• Europoje išlaikyta jėgų pusiausvyra.\n\n" +"Paryžiaus taikos konferencija:\n" +"• Pasikeitė Europos žemėlapis.\n" +"• Susikūrė naujos valstybės, tarp jų ir Lietuva.\n" +"• Sustiprėjo tarptautinių organizacijų vaidmuo."},{id: 38,title: "18. Viduramžių visuomenė ir socialinė struktūra",date: "2026-06-24",author: "istorija.exe",category: "Viduramžiai",tags: ["feodalizmas", "baudžiava", "miestai"],excerpt: "Viduramžių trifunkcinė visuomenė, feodalizmas, miestų reikšmė ir socialinės sistemos kritika.",content: "VIDURAMŽIŲ VISUOMENĖ IR SOCIALINĖ STRUKTŪRA\n\n" +"1. TRIFUNKCINĖ VISUOMENĖS SCHEMA:\n" +"• Viduramžių visuomenė buvo skirstoma į tris luomus.\n" +"• Dvasininkai meldėsi („tie, kurie meldžiasi“).\n" +"• Kilmingieji kariavo ir gynė visuomenę („tie, kurie kariauja“).\n" +"• Valstiečiai dirbo ir maitino visuomenę („tie, kurie dirba“).\n\n" +"2. FEODALINĖ SISTEMA:\n" +"• Feodas – žemės valda, suteikta vasalui už tarnybą.\n" +"• Vasalitetas – ryšys tarp siuzereno ir vasalo, pagrįstas ištikimybe ir tarnyba.\n" +"• Beneficija – laikinas žemės suteikimas už tarnybą.\n" +"• Alodas – paveldima ir visiškai nuosava žemė.\n\n" +"3. BAUDŽIAVA IR ŪKIS:\n" +"• Baudžiava – valstiečių priklausomybė nuo feodalo.\n" +"• Valstiečiai atliko prievoles ir dirbo pono žemę.\n" +"• Natūrinis ūkis – ūkis, kuriame beveik viskas gaminama savo poreikiams.\n\n" +"4. MIESTAI IR MIESTIEČIAI:\n" +"• Miestai tapo prekybos ir amatų centrais.\n" +"• Miesto savivalda suteikė miestiečiams daugiau laisvių.\n" +"• Cechas – amatininkų organizacija, reguliavusi gamybą ir prekybą.\n" +"• Miestiečių reikšmė ekonomikoje nuolat augo.\n\n" +"5. SOCIALINĖS SISTEMOS KRITIKA:\n" +"• Dalis visuomenės kritikavo luominę nelygybę.\n" +"• Tomas Miunceris gynė valstiečių ir vargingųjų interesus.\n" +"• Jis kritikavo feodalus ir Bažnyčios turtus.\n\n" +"6. SVARBŪS ASMENYS:\n" +"• Adalberas Laonietis suformulavo trifunkcinės visuomenės idėją.\n" +"• Tomas Miunceris tapo valstiečių kovos prieš socialinę nelygybę simboliu.\n\n" +"7. PASEKMĖS:\n" +"• Feodalinė sistema ilgą laiką palaikė visuomenės tvarką.\n" +"• Miestų augimas silpnino natūrinį ūkį ir feodalizmą.\n" +"• Socialiniai konfliktai skatino visuomenės pokyčius."},{id: 39,title: "19. Industrinė revoliucija ir XIX a. visuomenės pokyčiai",date: "2026-06-24",author: "istorija.exe",category: "Industrinė revoliucija",tags: ["pramonė", "socialiniai judėjimai", "kapitalizmas"],excerpt: "Industrinė revoliucija pakeitė ekonomiką, visuomenę ir paskatino naujų socialinių judėjimų atsiradimą.",content: "INDUSTRINĖ REVOLIUCIJA IR XIX A. VISUOMENĖS POKYČIAI\n\n" +"1. INDUSTRINĖ REVOLIUCIJA:\n" +"• XVIII–XIX a. vyko spartus pramonės ir technologijų vystymasis.\n" +"• Garo mašinos išradimas paskatino fabrikų ir geležinkelių plėtrą.\n" +"• Rankų darbą vis dažniau pakeitė mechanizuota gamyba.\n\n" +"2. EKONOMIKOS POKYČIAI:\n" +"• Įsigalėjo kapitalizmas ir laisvoji rinka.\n" +"• Adamas Smitas gynė laisvosios rinkos idėją.\n" +"• Akcinės bendrovės leido investuoti kapitalą į dideles įmones.\n" +"• Henris Fordas išpopuliarino konvejerinę gamybą.\n\n" +"3. SOCIALINĖS STRUKTŪROS KAITA:\n" +"• Sustiprėjo buržuazija – verslininkų ir fabrikų savininkų sluoksnis.\n" +"• Augo proletariatas – samdomų darbininkų klasė.\n" +"• Formavosi vidurinioji klasė.\n" +"• Daug žmonių kėlėsi gyventi į miestus.\n\n" +"4. SOCIALINĖS PROBLEMOS IR REFORMOS:\n" +"• Darbininkai dirbo sunkiomis sąlygomis už mažą atlyginimą.\n" +"• Kūrėsi profesinės sąjungos, gynusios darbuotojų teises.\n" +"• Oto fon Bismarkas įvedė socialinio draudimo reformas.\n\n" +"5. SOCIALINIAI JUDĖJIMAI:\n" +"• Karlas Marksas ir Frydrichas Engelsas kritikavo kapitalizmą.\n" +"• Jie ragino darbininkus kovoti už savo teises.\n" +"• Roza Liuksemburg palaikė socialistines idėjas.\n\n" +"6. MOTERŲ TEISIŲ JUDĖJIMAI:\n" +"• Feminizmas siekė moterų lygybės.\n" +"• Sufražistės reikalavo rinkimų teisės moterims.\n" +"• Emelina Penkherst buvo viena žymiausių sufražisčių.\n\n" +"7. SVARBŪS ĮVYKIAI:\n" +"• Garo mašinos išradimas XVIII a.\n" +"• Vergovės panaikinimas JAV 1865 m.\n" +"• Moterų rinkimų teisė Naujojoje Zelandijoje suteikta 1893 m.\n" +"• Moterų rinkimų teisė Suomijoje suteikta 1906 m.\n\n" +"8. PASEKMĖS:\n" +"• Spartėjo ekonomikos augimas ir urbanizacija.\n" +"• Didėjo socialinė nelygybė.\n" +"• Stiprėjo darbininkų ir moterų teisių judėjimai.\n" +"• Valstybės pradėjo aktyviau spręsti socialines problemas."},{id: 40,title: "20. XX a. moderni visuomenė ir kova už žmogaus teises",date: "2026-06-24",author: "istorija.exe",category: "XX amžius",tags: ["žmogaus teisės", "demokratija", "disidentai"],excerpt: "XX a. visuomenėje stiprėjo žmogaus teisių idėjos, tačiau kartu egzistavo diskriminacija, segregacija ir politinės represijos.",content: "XX A. MODERNI VISUOMENĖ IR KOVA UŽ ŽMOGAUS TEISES\n\n" +"1. ŽMOGAUS TEISIŲ IDĖJA:\n" +"• XX a. žmogaus teisės tapo svarbia demokratinių valstybių vertybe.\n" +"• Pabrėžtos prigimtinės žmogaus teisės ir laisvės.\n" +"• Demokratinės valstybės siekė užtikrinti piliečių lygybę.\n\n" +"2. VIDINIAI PRIEŠTARAVIMAI:\n" +"• Nepaisant deklaruojamų laisvių, egzistavo diskriminacija.\n" +"• JAV ilgą laiką vyravo segregacija – rasinis baltųjų ir juodaodžių atskyrimas.\n" +"• Pietų Afrikoje veikė apartheido sistema.\n\n" +"3. KOMUNISTINIO PASAULIO TIKROVĖ:\n" +"• Sovietų Sąjunga deklaravo lygybę ir laisves, tačiau ribojo žmogaus teises.\n" +"• Buvo persekiojami valdžios kritikai ir opozicija.\n" +"• Disidentai viešai kritikavo režimą ir gynė žmogaus teises.\n\n" +"4. SVARBŪS ASMENYS:\n" +"• Martinas Liuteris Kingas kovojo prieš rasinę diskriminaciją JAV.\n" +"• Andrejus Sacharovas kritikavo Sovietų Sąjungos represijas.\n" +"• Vaclavas Havelas gynė žmogaus teises Čekoslovakijoje.\n" +"• Liudmila Aleksejeva aktyviai veikė disidentiniame judėjime.\n" +"• Jonas Paulius II rėmė kovą už laisvę ir žmogaus orumą.\n\n" +"5. SVARBIOS SĄVOKOS:\n" +"• Demokratizacija – perėjimas prie demokratinės santvarkos.\n" +"• Disidentizmas – pasipriešinimas autoritariniam režimui.\n" +"• Helsinkio baigiamasis aktas – 1975 m. susitarimas dėl saugumo ir žmogaus teisių Europoje.\n" +"• Segregacija – žmonių atskyrimas pagal rasę ar kitus požymius.\n" +"• Apartheidas – rasinės diskriminacijos politika Pietų Afrikoje.\n\n" +"6. SVARBŪS ĮVYKIAI:\n" +"• 1948 m. priimta Visuotinė žmogaus teisių deklaracija.\n" +"• 1968 m. Prahos pavasaris siekė liberalizuoti komunistinę sistemą.\n" +"• Homoseksualumas išbrauktas iš Pasaulio sveikatos organizacijos ligų sąrašo.\n\n" +"7. PASEKMĖS:\n" +"• Stiprėjo žmogaus teisių apsauga pasaulyje.\n" +"• Silpnėjo diskriminacinės sistemos.\n" +"• Demokratinės vertybės tapo svarbia tarptautinės politikos dalimi."},{id: 41,title: "21. XX a. pasaulinės ekonomikos asimetrijos",date: "2026-06-24",author: "istorija.exe",category: "XX amžiaus ekonomika",tags: ["laisvoji rinka", "planinė ekonomika", "neoliberalizmas"],excerpt: "XX a. pasaulyje konkuravo laisvosios rinkos, gerovės valstybės ir totalitarinės planinės ekonomikos modeliai.",content: "XX A. PASAULINĖS EKONOMIKOS ASIMETRIJOS\n\n" +"1. LAISVOSIOS RINKOS EKONOMIKA:\n" +"• Vakarų valstybėse vyravo kapitalistinė ekonomika.\n" +"• Laisvoji rinka grindžiama privačia nuosavybe ir konkurencija.\n" +"• Valstybės vaidmuo ekonomikoje buvo ribotas.\n" +"• Margaret Tečer vykdė neoliberalizmo politiką Didžiojoje Britanijoje.\n\n" +"2. GEROVĖS VALSTYBĖ:\n" +"• Dalis demokratinių valstybių siekė mažinti socialinę nelygybę.\n" +"• Valstybė aktyviai rūpinosi švietimu, sveikatos apsauga ir socialine parama.\n" +"• Buvo taikomi progresiniai mokesčiai.\n" +"• Ulofas Palmė palaikė socialinio teisingumo ir gerovės valstybės idėjas.\n\n" +"3. ETATIZMAS:\n" +"• Etatizmas – stiprus valstybės kišimasis į ekonomiką.\n" +"• Valstybė reguliuoja gamybą, prekybą ir socialinę politiką.\n" +"• Siekta užtikrinti ekonominį stabilumą ir mažinti krizes.\n\n" +"4. TOTALITARINĖ IR PLANINĖ EKONOMIKA:\n" +"• Sovietų Sąjungoje ir komunistinėse valstybėse vyravo planinė ekonomika.\n" +"• Privati nuosavybė buvo ribojama arba naikinama.\n" +"• Valstybė kontroliavo gamybą, kainas ir darbo jėgą.\n" +"• Totalitarinė ekonomika buvo susijusi su represijomis ir žmogaus teisių pažeidimais.\n\n" +"5. „DIDYSIS ŠUOLIS“ KINIJOJE:\n" +"• Mao Dzedungo politika siekė sparčiai industrializuoti Kiniją.\n" +"• Kolektyvizacija ir prievartinė gamyba sukėlė badą.\n" +"• Žuvo milijonai žmonių.\n\n" +"6. SVARBŪS ASMENYS:\n" +"• Deng Siaopinas pradėjo Kinijos ekonomines reformas ir rinkos liberalizavimą.\n" +"• Margaret Tečer stiprino neoliberalizmo idėjas.\n" +"• Ulofas Palmė gynė gerovės valstybės modelį.\n" +"• Šv. Motina Teresė pabrėžė socialinės pagalbos ir rūpinimosi vargstančiaisiais svarbą.\n\n" +"7. SVARBIAUSIOS SĄVOKOS:\n" +"• Neoliberalizmas – ekonomikos modelis, akcentuojantis laisvąją rinką ir mažesnį valstybės vaidmenį.\n" +"• Socialinis teisingumas – siekis mažinti socialinę nelygybę.\n" +"• Privati nuosavybė – asmens teisė valdyti turtą.\n" +"• Planinė ekonomika – ekonomika, valdoma valstybės planų.\n\n" +"8. PASEKMĖS:\n" +"• Vakarų valstybėse augo gyvenimo lygis.\n" +"• Komunistinėse šalyse ekonomika dažnai buvo neefektyvi.\n" +"• Skirtingi ekonomikos modeliai formavo Šaltojo karo pasaulio susiskaldymą."},{id: 42,title: "22. LDK socialinė-ekonominė struktūra XIV–XVIII a.",date: "2026-06-24",author: "istorija.exe",category: "Lietuvos Didžioji Kunigaikštystė",tags: ["baudžiava", "Valakų reforma", "luomai"],excerpt: "LDK socialinė-ekonominė struktūra: bajorijos stiprėjimas, baudžiavos įtvirtinimas ir žemės ūkio pokyčiai.",content: "LDK SOCIALINĖ-EKONOMINĖ STRUKTŪRA XIV–XVIII A.\n\n" +"1. AGRARINĖ VISUOMENĖ:\n" +"• LDK buvo agrarinė visuomenė – dauguma gyventojų vertėsi žemės ūkiu.\n" +"• Visuomenė buvo suskirstyta į luomus.\n" +"• Didžiausią įtaką turėjo bajorija ir didikai.\n\n" +"2. LUOMAI IR SOCIALINIAI SANTYKIAI:\n" +"• Bajorai turėjo privilegijų ir politinių teisių.\n" +"• Valstiečiai sudarė „tylinčiąją daugumą“.\n" +"• Miestai buvo silpni, jų įtaka mažesnė nei Vakarų Europoje.\n" +"• Magdeburgo privilegija suteikė miestams savivaldą.\n\n" +"3. FEODALINĖ SISTEMA:\n" +"• Feodas – žemės valda už tarnybą.\n" +"• Stambioji žemėvalda stiprėjo.\n" +"• Valstiečiai atliko lažą – privalomą darbą pono ūkyje.\n" +"• Baudžiauninkai buvo priklausomi nuo žemvaldžių.\n\n" +"4. VALAKŲ REFORMA (1557 M.):\n" +"• Reforma pertvarkė žemės valdymą ir matavimą.\n" +"• Valakas tapo pagrindiniu žemės matavimo vienetu.\n" +"• Buvo įtvirtinta trilaukė sėjomaina.\n" +"• Augo žemės ūkio našumas ir javų eksportas.\n" +"• Sustiprėjo baudžiava ir palivarkinis ūkis.\n\n" +"5. SVARBIAUSIOS SĄVOKOS:\n" +"• Natūrinis ūkis – ūkis, gaminantis daugiausia savo poreikiams.\n" +"• Palivarkas – dvaro žemė, dirbama baudžiauninkų darbu.\n" +"• Inventorius – dvaro turto ir prievolių aprašymas.\n" +"• Dešimtinė – mokestis Bažnyčiai.\n" +"• Cechas – amatininkų organizacija.\n" +"• Veldamai – priklausomi valstiečiai.\n\n" +"6. SVARBŪS ASMENYS:\n" +"• Jogaila ir Vytautas Didysis stiprino bajorų sluoksnį.\n" +"• Kazimieras Jogailaitis suteikė bajorams privilegijų.\n" +"• Bona Sforca prisidėjo prie ūkio reformų.\n" +"• Žygimantas Senasis stiprino valstybės administraciją.\n" +"• Ona Kotryna Sanguškaitė-Radvilienė garsėjo socialine ir kultūrine veikla.\n\n" +"7. SVARBŪS ĮVYKIAI:\n" +"• Jogailos privilegija (1387 m.) sustiprino bajorų teises.\n" +"• Kazimiero privilegija (1447 m.) padidino bajorų įtaką.\n" +"• Pirmasis Lietuvos Statutas (1529 m.) įtvirtino teisinę sistemą.\n" +"• Valakų reforma (1557 m.) pertvarkė žemės ūkį.\n\n" +"8. PASEKMĖS:\n" +"• Sustiprėjo bajorijos galia.\n" +"• Silpnėjo valstiečių laisvės.\n" +"• Augo žemės ūkio produkcija ir prekyba javais.\n" +"• LDK ekonomika išliko daugiausia agrarinė."}
+{id: 37,
 
+title: "17. Senųjų civilizacijų socialinė-ekonominė struktūra",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "Senovės civilizacijos",
+
+tags: ["vergovė", "aristokratija", "Roma"],
+
+excerpt: "Senųjų civilizacijų socialinė-ekonominė struktūra: vergovė, socialiniai sluoksniai, miestų reikšmė ir stambūs ūkiai.",
+
+content: "SENŲJŲ CIVILIZACIJŲ SOCIALINĖ-EKONOMINĖ STRUKTŪRA\n\n" +
+
+"1. SOCIALINĖ PIRAMIDĖ:\n" +
+
+"• Senosiose civilizacijose visuomenė buvo suskirstyta į sluoksnius.\n" +
+
+"• Žmogaus padėtį dažnai nulėmė kilmė ir prigimtis.\n" +
+
+"• Viršuje buvo aristokratija ir valdovai, apačioje – vergai.\n\n" +
+
+"2. ELITAS IR ARISTOKRATIJA:\n" +
+
+"• Aristokratija – kilmingųjų sluoksnis, valdęs žemes ir turėjęs politinę galią.\n" +
+
+"• Romoje svarbų vaidmenį atliko patricijai – kilmingi piliečiai.\n" +
+
+"• Plebėjai buvo laisvieji, tačiau turėjo mažiau politinių teisių.\n\n" +
+
+"3. VERGOVĖ:\n" +
+
+"• Vergovė buvo vienas svarbiausių senųjų civilizacijų ekonomikos pagrindų.\n" +
+
+"• Vergai dirbo ūkiuose, statybose ir kasyklose.\n" +
+
+"• Pasaulio stebuklų ir didelių statinių statyboje naudotas vergų darbas.\n\n" +
+
+"4. MIESTAS IR ŪKIS:\n" +
+
+"• Polis – senovės Graikijos miestas-valstybė.\n" +
+
+"• Latifundija – stambus žemės ūkio dvaras Senovės Romoje.\n" +
+
+"• Vila („villa rustica“) – romėnų kaimo ūkis.\n" +
+
+"• Laisvieji žemdirbiai dirbo smulkiuose ūkiuose.\n\n" +
+
+"5. SVARBIOS SĄVOKOS:\n" +
+
+"• Helotai – priklausomi Spartanų valstiečiai.\n" +
+
+"• Kolonai – priklausomi Romos žemdirbiai, nuomoję žemę.\n" +
+
+"• Irigacinė sistema – dirbtinis laukų drėkinimas vandeniu.\n" +
+
+"• Hamurapio teisynas – Babilono įstatymų rinkinys, reguliavęs visuomenės tvarką.\n\n" +
+
+"6. SVARBŪS ASMENYS:\n" +
+
+"• Aristotelis teigė, kad visuomenėje natūraliai egzistuoja valdantieji ir pavaldiniai.\n" +
+
+"• Tiberijus ir Gajus Grakchai siekė žemės reformų ir norėjo pagerinti plebėjų padėtį.\n\n" +
+
+"7. PASEKMĖS:\n" +
+
+"• Vergovė stiprino ekonomiką, tačiau didino socialinę nelygybę.\n" +
+
+"• Stambūs ūkiai silpnino laisvųjų žemdirbių sluoksnį.\n" +
+
+"• Socialiniai konfliktai skatino reformas ir politines krizes."
+
+},
+
+{
+
+id: 36,
+
+title: "16. Vienos kongresas ir Paryžiaus taikos konferencija: Palyginimas",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "Tarptautiniai santykiai",
+
+tags: ["Vienos kongresas", "Paryžiaus taikos konferencija", "palyginimas"],
+
+excerpt: "Vienos kongreso ir Paryžiaus taikos konferencijos palyginimas: priežastys, tikslai, padariniai ir poveikis Europai.",
+
+content: "VIENOS KONGRESAS IR PARYŽIAUS TAIKOS KONFERENCIJA – PALYGINIMAS\n\n" +
+
+"1. PRIEŽASTYS:\n\n" +
+
+"Vienos kongresas (1814–1815):\n" +
+
+"• Napoleono karai ir Prancūzijos ekspansija Europoje.\n" +
+
+"• Siekis atkurti politinę tvarką po revoliucijų ir karų.\n\n" +
+
+"Paryžiaus taikos konferencija (1919):\n" +
+
+"• Pirmasis pasaulinis karas.\n" +
+
+"• Siekis nustatyti naują pasaulio tvarką po milžiniškų karo nuostolių.\n\n" +
+
+"2. PANAŠUMAI:\n" +
+
+"• Abi konferencijos vyko po didelių Europos karų.\n" +
+
+"• Siekta užtikrinti taiką ir stabilumą Europoje.\n" +
+
+"• Spręsti teritoriniai klausimai.\n" +
+
+"• Didžiosios valstybės dominavo sprendimų priėmime.\n\n" +
+
+"3. SKIRTUMAI:\n\n" +
+
+"Vienos kongresas:\n" +
+
+"• Remtasi monarchijų ir legitimizmo principu.\n" +
+
+"• Siekta jėgų pusiausvyros Europoje.\n" +
+
+"• Prancūzija nebuvo smarkiai nubausta.\n\n" +
+
+"Paryžiaus taikos konferencija:\n" +
+
+"• Akcentuota tautų apsisprendimo teisė.\n" +
+
+"• Vokietijai priskirta atsakomybė už karą.\n" +
+
+"• Vokietija buvo griežtai nubausta reparacijomis ir teritorijų praradimu.\n\n" +
+
+"4. NAUJOVĖS:\n\n" +
+
+"Vienos kongresas:\n" +
+
+"• Sukurta Europos koncertų sistema.\n" +
+
+"• Valstybės bendradarbiavo palaikant tvarką Europoje.\n\n" +
+
+"Paryžiaus taikos konferencija:\n" +
+
+"• Įkurta Tautų Sąjunga.\n" +
+
+"• Plačiau taikyta tautų apsisprendimo idėja.\n\n" +
+
+"5. TEIGIAMI ASPEKTAI:\n\n" +
+
+"Vienos kongresas:\n" +
+
+"• Europoje ilgam išlaikyta santykinė taika.\n" +
+
+"• Atkurta politinė pusiausvyra.\n\n" +
+
+"Paryžiaus taikos konferencija:\n" +
+
+"• Sukurtos naujos valstybės Europoje.\n" +
+
+"• Silpnintos agresyvios imperijos.\n\n" +
+
+"6. NEIGIAMI ASPEKTAI:\n\n" +
+
+"Vienos kongresas:\n" +
+
+"• Nepaisė tautinių judėjimų.\n" +
+
+"• Slopino liberalias idėjas.\n\n" +
+
+"Paryžiaus taikos konferencija:\n" +
+
+"• Versalio sutartis sukėlė Vokietijos nepasitenkinimą.\n" +
+
+"• Sudarytos prielaidos Antrajam pasauliniam karui.\n\n" +
+
+"7. PADARINIAI:\n\n" +
+
+"Vienos kongresas:\n" +
+
+"• Sustiprėjo konservatyvios monarchijos.\n" +
+
+"• Europoje išlaikyta jėgų pusiausvyra.\n\n" +
+
+"Paryžiaus taikos konferencija:\n" +
+
+"• Pasikeitė Europos žemėlapis.\n" +
+
+"• Susikūrė naujos valstybės, tarp jų ir Lietuva.\n" +
+
+"• Sustiprėjo tarptautinių organizacijų vaidmuo."
+
+},
+
+{
+
+id: 38,
+
+title: "18. Viduramžių visuomenė ir socialinė struktūra",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "Viduramžiai",
+
+tags: ["feodalizmas", "baudžiava", "miestai"],
+
+excerpt: "Viduramžių trifunkcinė visuomenė, feodalizmas, miestų reikšmė ir socialinės sistemos kritika.",
+
+content: "VIDURAMŽIŲ VISUOMENĖ IR SOCIALINĖ STRUKTŪRA\n\n" +
+
+"1. TRIFUNKCINĖ VISUOMENĖS SCHEMA:\n" +
+
+"• Viduramžių visuomenė buvo skirstoma į tris luomus.\n" +
+
+"• Dvasininkai meldėsi („tie, kurie meldžiasi“).\n" +
+
+"• Kilmingieji kariavo ir gynė visuomenę („tie, kurie kariauja“).\n" +
+
+"• Valstiečiai dirbo ir maitino visuomenę („tie, kurie dirba“).\n\n" +
+
+"2. FEODALINĖ SISTEMA:\n" +
+
+"• Feodas – žemės valda, suteikta vasalui už tarnybą.\n" +
+
+"• Vasalitetas – ryšys tarp siuzereno ir vasalo, pagrįstas ištikimybe ir tarnyba.\n" +
+
+"• Beneficija – laikinas žemės suteikimas už tarnybą.\n" +
+
+"• Alodas – paveldima ir visiškai nuosava žemė.\n\n" +
+
+"3. BAUDŽIAVA IR ŪKIS:\n" +
+
+"• Baudžiava – valstiečių priklausomybė nuo feodalo.\n" +
+
+"• Valstiečiai atliko prievoles ir dirbo pono žemę.\n" +
+
+"• Natūrinis ūkis – ūkis, kuriame beveik viskas gaminama savo poreikiams.\n\n" +
+
+"4. MIESTAI IR MIESTIEČIAI:\n" +
+
+"• Miestai tapo prekybos ir amatų centrais.\n" +
+
+"• Miesto savivalda suteikė miestiečiams daugiau laisvių.\n" +
+
+"• Cechas – amatininkų organizacija, reguliavusi gamybą ir prekybą.\n" +
+
+"• Miestiečių reikšmė ekonomikoje nuolat augo.\n\n" +
+
+"5. SOCIALINĖS SISTEMOS KRITIKA:\n" +
+
+"• Dalis visuomenės kritikavo luominę nelygybę.\n" +
+
+"• Tomas Miunceris gynė valstiečių ir vargingųjų interesus.\n" +
+
+"• Jis kritikavo feodalus ir Bažnyčios turtus.\n\n" +
+
+"6. SVARBŪS ASMENYS:\n" +
+
+"• Adalberas Laonietis suformulavo trifunkcinės visuomenės idėją.\n" +
+
+"• Tomas Miunceris tapo valstiečių kovos prieš socialinę nelygybę simboliu.\n\n" +
+
+"7. PASEKMĖS:\n" +
+
+"• Feodalinė sistema ilgą laiką palaikė visuomenės tvarką.\n" +
+
+"• Miestų augimas silpnino natūrinį ūkį ir feodalizmą.\n" +
+
+"• Socialiniai konfliktai skatino visuomenės pokyčius."
+
+},
+
+{
+
+id: 39,
+
+title: "19. Industrinė revoliucija ir XIX a. visuomenės pokyčiai",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "Industrinė revoliucija",
+
+tags: ["pramonė", "socialiniai judėjimai", "kapitalizmas"],
+
+excerpt: "Industrinė revoliucija pakeitė ekonomiką, visuomenę ir paskatino naujų socialinių judėjimų atsiradimą.",
+
+content: "INDUSTRINĖ REVOLIUCIJA IR XIX A. VISUOMENĖS POKYČIAI\n\n" +
+
+"1. INDUSTRINĖ REVOLIUCIJA:\n" +
+
+"• XVIII–XIX a. vyko spartus pramonės ir technologijų vystymasis.\n" +
+
+"• Garo mašinos išradimas paskatino fabrikų ir geležinkelių plėtrą.\n" +
+
+"• Rankų darbą vis dažniau pakeitė mechanizuota gamyba.\n\n" +
+
+"2. EKONOMIKOS POKYČIAI:\n" +
+
+"• Įsigalėjo kapitalizmas ir laisvoji rinka.\n" +
+
+"• Adamas Smitas gynė laisvosios rinkos idėją.\n" +
+
+"• Akcinės bendrovės leido investuoti kapitalą į dideles įmones.\n" +
+
+"• Henris Fordas išpopuliarino konvejerinę gamybą.\n\n" +
+
+"3. SOCIALINĖS STRUKTŪROS KAITA:\n" +
+
+"• Sustiprėjo buržuazija – verslininkų ir fabrikų savininkų sluoksnis.\n" +
+
+"• Augo proletariatas – samdomų darbininkų klasė.\n" +
+
+"• Formavosi vidurinioji klasė.\n" +
+
+"• Daug žmonių kėlėsi gyventi į miestus.\n\n" +
+
+"4. SOCIALINĖS PROBLEMOS IR REFORMOS:\n" +
+
+"• Darbininkai dirbo sunkiomis sąlygomis už mažą atlyginimą.\n" +
+
+"• Kūrėsi profesinės sąjungos, gynusios darbuotojų teises.\n" +
+
+"• Oto fon Bismarkas įvedė socialinio draudimo reformas.\n\n" +
+
+"5. SOCIALINIAI JUDĖJIMAI:\n" +
+
+"• Karlas Marksas ir Frydrichas Engelsas kritikavo kapitalizmą.\n" +
+
+"• Jie ragino darbininkus kovoti už savo teises.\n" +
+
+"• Roza Liuksemburg palaikė socialistines idėjas.\n\n" +
+
+"6. MOTERŲ TEISIŲ JUDĖJIMAI:\n" +
+
+"• Feminizmas siekė moterų lygybės.\n" +
+
+"• Sufražistės reikalavo rinkimų teisės moterims.\n" +
+
+"• Emelina Penkherst buvo viena žymiausių sufražisčių.\n\n" +
+
+"7. SVARBŪS ĮVYKIAI:\n" +
+
+"• Garo mašinos išradimas XVIII a.\n" +
+
+"• Vergovės panaikinimas JAV 1865 m.\n" +
+
+"• Moterų rinkimų teisė Naujojoje Zelandijoje suteikta 1893 m.\n" +
+
+"• Moterų rinkimų teisė Suomijoje suteikta 1906 m.\n\n" +
+
+"8. PASEKMĖS:\n" +
+
+"• Spartėjo ekonomikos augimas ir urbanizacija.\n" +
+
+"• Didėjo socialinė nelygybė.\n" +
+
+"• Stiprėjo darbininkų ir moterų teisių judėjimai.\n" +
+
+"• Valstybės pradėjo aktyviau spręsti socialines problemas."
+
+},
+
+{
+
+id: 40,
+
+title: "20. XX a. moderni visuomenė ir kova už žmogaus teises",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "XX amžius",
+
+tags: ["žmogaus teisės", "demokratija", "disidentai"],
+
+excerpt: "XX a. visuomenėje stiprėjo žmogaus teisių idėjos, tačiau kartu egzistavo diskriminacija, segregacija ir politinės represijos.",
+
+content: "XX A. MODERNI VISUOMENĖ IR KOVA UŽ ŽMOGAUS TEISES\n\n" +
+
+"1. ŽMOGAUS TEISIŲ IDĖJA:\n" +
+
+"• XX a. žmogaus teisės tapo svarbia demokratinių valstybių vertybe.\n" +
+
+"• Pabrėžtos prigimtinės žmogaus teisės ir laisvės.\n" +
+
+"• Demokratinės valstybės siekė užtikrinti piliečių lygybę.\n\n" +
+
+"2. VIDINIAI PRIEŠTARAVIMAI:\n" +
+
+"• Nepaisant deklaruojamų laisvių, egzistavo diskriminacija.\n" +
+
+"• JAV ilgą laiką vyravo segregacija – rasinis baltųjų ir juodaodžių atskyrimas.\n" +
+
+"• Pietų Afrikoje veikė apartheido sistema.\n\n" +
+
+"3. KOMUNISTINIO PASAULIO TIKROVĖ:\n" +
+
+"• Sovietų Sąjunga deklaravo lygybę ir laisves, tačiau ribojo žmogaus teises.\n" +
+
+"• Buvo persekiojami valdžios kritikai ir opozicija.\n" +
+
+"• Disidentai viešai kritikavo režimą ir gynė žmogaus teises.\n\n" +
+
+"4. SVARBŪS ASMENYS:\n" +
+
+"• Martinas Liuteris Kingas kovojo prieš rasinę diskriminaciją JAV.\n" +
+
+"• Andrejus Sacharovas kritikavo Sovietų Sąjungos represijas.\n" +
+
+"• Vaclavas Havelas gynė žmogaus teises Čekoslovakijoje.\n" +
+
+"• Liudmila Aleksejeva aktyviai veikė disidentiniame judėjime.\n" +
+
+"• Jonas Paulius II rėmė kovą už laisvę ir žmogaus orumą.\n\n" +
+
+"5. SVARBIOS SĄVOKOS:\n" +
+
+"• Demokratizacija – perėjimas prie demokratinės santvarkos.\n" +
+
+"• Disidentizmas – pasipriešinimas autoritariniam režimui.\n" +
+
+"• Helsinkio baigiamasis aktas – 1975 m. susitarimas dėl saugumo ir žmogaus teisių Europoje.\n" +
+
+"• Segregacija – žmonių atskyrimas pagal rasę ar kitus požymius.\n" +
+
+"• Apartheidas – rasinės diskriminacijos politika Pietų Afrikoje.\n\n" +
+
+"6. SVARBŪS ĮVYKIAI:\n" +
+
+"• 1948 m. priimta Visuotinė žmogaus teisių deklaracija.\n" +
+
+"• 1968 m. Prahos pavasaris siekė liberalizuoti komunistinę sistemą.\n" +
+
+"• Homoseksualumas išbrauktas iš Pasaulio sveikatos organizacijos ligų sąrašo.\n\n" +
+
+"7. PASEKMĖS:\n" +
+
+"• Stiprėjo žmogaus teisių apsauga pasaulyje.\n" +
+
+"• Silpnėjo diskriminacinės sistemos.\n" +
+
+"• Demokratinės vertybės tapo svarbia tarptautinės politikos dalimi."
+
+},
+
+{
+
+id: 41,
+
+title: "21. XX a. pasaulinės ekonomikos asimetrijos",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "XX amžiaus ekonomika",
+
+tags: ["laisvoji rinka", "planinė ekonomika", "neoliberalizmas"],
+
+excerpt: "XX a. pasaulyje konkuravo laisvosios rinkos, gerovės valstybės ir totalitarinės planinės ekonomikos modeliai.",
+
+content: "XX A. PASAULINĖS EKONOMIKOS ASIMETRIJOS\n\n" +
+
+"1. LAISVOSIOS RINKOS EKONOMIKA:\n" +
+
+"• Vakarų valstybėse vyravo kapitalistinė ekonomika.\n" +
+
+"• Laisvoji rinka grindžiama privačia nuosavybe ir konkurencija.\n" +
+
+"• Valstybės vaidmuo ekonomikoje buvo ribotas.\n" +
+
+"• Margaret Tečer vykdė neoliberalizmo politiką Didžiojoje Britanijoje.\n\n" +
+
+"2. GEROVĖS VALSTYBĖ:\n" +
+
+"• Dalis demokratinių valstybių siekė mažinti socialinę nelygybę.\n" +
+
+"• Valstybė aktyviai rūpinosi švietimu, sveikatos apsauga ir socialine parama.\n" +
+
+"• Buvo taikomi progresiniai mokesčiai.\n" +
+
+"• Ulofas Palmė palaikė socialinio teisingumo ir gerovės valstybės idėjas.\n\n" +
+
+"3. ETATIZMAS:\n" +
+
+"• Etatizmas – stiprus valstybės kišimasis į ekonomiką.\n" +
+
+"• Valstybė reguliuoja gamybą, prekybą ir socialinę politiką.\n" +
+
+"• Siekta užtikrinti ekonominį stabilumą ir mažinti krizes.\n\n" +
+
+"4. TOTALITARINĖ IR PLANINĖ EKONOMIKA:\n" +
+
+"• Sovietų Sąjungoje ir komunistinėse valstybėse vyravo planinė ekonomika.\n" +
+
+"• Privati nuosavybė buvo ribojama arba naikinama.\n" +
+
+"• Valstybė kontroliavo gamybą, kainas ir darbo jėgą.\n" +
+
+"• Totalitarinė ekonomika buvo susijusi su represijomis ir žmogaus teisių pažeidimais.\n\n" +
+
+"5. „DIDYSIS ŠUOLIS“ KINIJOJE:\n" +
+
+"• Mao Dzedungo politika siekė sparčiai industrializuoti Kiniją.\n" +
+
+"• Kolektyvizacija ir prievartinė gamyba sukėlė badą.\n" +
+
+"• Žuvo milijonai žmonių.\n\n" +
+
+"6. SVARBŪS ASMENYS:\n" +
+
+"• Deng Siaopinas pradėjo Kinijos ekonomines reformas ir rinkos liberalizavimą.\n" +
+
+"• Margaret Tečer stiprino neoliberalizmo idėjas.\n" +
+
+"• Ulofas Palmė gynė gerovės valstybės modelį.\n" +
+
+"• Šv. Motina Teresė pabrėžė socialinės pagalbos ir rūpinimosi vargstančiaisiais svarbą.\n\n" +
+
+"7. SVARBIAUSIOS SĄVOKOS:\n" +
+
+"• Neoliberalizmas – ekonomikos modelis, akcentuojantis laisvąją rinką ir mažesnį valstybės vaidmenį.\n" +
+
+"• Socialinis teisingumas – siekis mažinti socialinę nelygybę.\n" +
+
+"• Privati nuosavybė – asmens teisė valdyti turtą.\n" +
+
+"• Planinė ekonomika – ekonomika, valdoma valstybės planų.\n\n" +
+
+"8. PASEKMĖS:\n" +
+
+"• Vakarų valstybėse augo gyvenimo lygis.\n" +
+
+"• Komunistinėse šalyse ekonomika dažnai buvo neefektyvi.\n" +
+
+"• Skirtingi ekonomikos modeliai formavo Šaltojo karo pasaulio susiskaldymą."
+
+},
+
+{
+
+id: 42,
+
+title: "22. LDK socialinė-ekonominė struktūra XIV–XVIII a.",
+
+date: "2026-06-24",
+
+author: "istorija.exe",
+
+category: "Lietuvos Didžioji Kunigaikštystė",
+
+tags: ["baudžiava", "Valakų reforma", "luomai"],
+
+excerpt: "LDK socialinė-ekonominė struktūra: bajorijos stiprėjimas, baudžiavos įtvirtinimas ir žemės ūkio pokyčiai.",
+
+content: "LDK SOCIALINĖ-EKONOMINĖ STRUKTŪRA XIV–XVIII A.\n\n" +
+
+"1. AGRARINĖ VISUOMENĖ:\n" +
+
+"• LDK buvo agrarinė visuomenė – dauguma gyventojų vertėsi žemės ūkiu.\n" +
+
+"• Visuomenė buvo suskirstyta į luomus.\n" +
+
+"• Didžiausią įtaką turėjo bajorija ir didikai.\n\n" +
+
+"2. LUOMAI IR SOCIALINIAI SANTYKIAI:\n" +
+
+"• Bajorai turėjo privilegijų ir politinių teisių.\n" +
+
+"• Valstiečiai sudarė „tylinčiąją daugumą“.\n" +
+
+"• Miestai buvo silpni, jų įtaka mažesnė nei Vakarų Europoje.\n" +
+
+"• Magdeburgo privilegija suteikė miestams savivaldą.\n\n" +
+
+"3. FEODALINĖ SISTEMA:\n" +
+
+"• Feodas – žemės valda už tarnybą.\n" +
+
+"• Stambioji žemėvalda stiprėjo.\n" +
+
+"• Valstiečiai atliko lažą – privalomą darbą pono ūkyje.\n" +
+
+"• Baudžiauninkai buvo priklausomi nuo žemvaldžių.\n\n" +
+
+"4. VALAKŲ REFORMA (1557 M.):\n" +
+
+"• Reforma pertvarkė žemės valdymą ir matavimą.\n" +
+
+"• Valakas tapo pagrindiniu žemės matavimo vienetu.\n" +
+
+"• Buvo įtvirtinta trilaukė sėjomaina.\n" +
+
+"• Augo žemės ūkio našumas ir javų eksportas.\n" +
+
+"• Sustiprėjo baudžiava ir palivarkinis ūkis.\n\n" +
+
+"5. SVARBIAUSIOS SĄVOKOS:\n" +
+
+"• Natūrinis ūkis – ūkis, gaminantis daugiausia savo poreikiams.\n" +
+
+"• Palivarkas – dvaro žemė, dirbama baudžiauninkų darbu.\n" +
+
+"• Inventorius – dvaro turto ir prievolių aprašymas.\n" +
+
+"• Dešimtinė – mokestis Bažnyčiai.\n" +
+
+"• Cechas – amatininkų organizacija.\n" +
+
+"• Veldamai – priklausomi valstiečiai.\n\n" +
+
+"6. SVARBŪS ASMENYS:\n" +
+
+"• Jogaila ir Vytautas Didysis stiprino bajorų sluoksnį.\n" +
+
+"• Kazimieras Jogailaitis suteikė bajorams privilegijų.\n" +
+
+"• Bona Sforca prisidėjo prie ūkio reformų.\n" +
+
+"• Žygimantas Senasis stiprino valstybės administraciją.\n" +
+
+"• Ona Kotryna Sanguškaitė-Radvilienė garsėjo socialine ir kultūrine veikla.\n\n" +
+
+"7. SVARBŪS ĮVYKIAI:\n" +
+
+"• Jogailos privilegija (1387 m.) sustiprino bajorų teises.\n" +
+
+"• Kazimiero privilegija (1447 m.) padidino bajorų įtaką.\n" +
+
+"• Pirmasis Lietuvos Statutas (1529 m.) įtvirtino teisinę sistemą.\n" +
+
+"• Valakų reforma (1557 m.) pertvarkė žemės ūkį.\n\n" +
+
+"8. PASEKMĖS:\n" +
+
+"• Sustiprėjo bajorijos galia.\n" +
+
+"• Silpnėjo valstiečių laisvės.\n" +
+
+"• Augo žemės ūkio produkcija ir prekyba javais.\n" +
+
+"• LDK ekonomika išliko daugiausia agrarinė."
+
+}
     ];
 
     let currentCategory = 'All';
@@ -1730,7 +2430,7 @@ content: "PASEKMĖS\n\n" +
             </div>
           </div>
           <div class="body">
-            <div class="preview"></div>
+            <div class="preview" style="--thumb:url('${post.thumbnail}')"></div>
             <div class="excerpt">${post.excerpt}</div>
           </div>
           <div class="footer">
