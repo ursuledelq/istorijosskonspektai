@@ -755,7 +755,25 @@ figure.blog-figure{
 .post .preview::after{
   animation: none !important;
 }
+.like .importance {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 18px;
+  margin-left: 6px;
+  border: 2px solid rgba(0,0,0,.55);
+  background: linear-gradient(180deg, #ffe08a, #ff8a2d);
+  color: #220000;
+  border-radius: 3px;
+  font-weight: 1000;
+  box-shadow: 0 2px 0 rgba(255,255,255,.55) inset, 0 8px 18px rgba(255,77,77,.18);
+}
 
+.like .importance[data-hot="false"]{
+  opacity: .35;
+  filter: grayscale(0.6);
+}
   </style>
 </head>
 
@@ -1028,6 +1046,7 @@ figure.blog-figure{
       {
         id: 3,
         title: "3.1. Ikimoderniųjų laikų konfliktai: sąvokos ir esmė",
+        important: true,
         thumbnail: "https://i.pinimg.com/originals/69/f3/e8/69f3e812d3333fbdcdaf76fc846e24d9.gif",
         date: "2026-06-02",
         author: "diplomatija.io",
@@ -1068,6 +1087,7 @@ figure.blog-figure{
       {
         id: 5,
         title: "3.3. Valstybė kaip subjektas: nuo Vestfalijos iki Vienos",
+        important: true,
          thumbnail: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDVxN2J2czh5cG5ta2NnYWd3cXA5aDZzYTUwbXZkdmV3Mm14M3o4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1dMhBj4X5uLVksrQCo/giphy.gif",
         date: "2026-06-04",
         author: "diplomatija.io",
@@ -1086,6 +1106,7 @@ figure.blog-figure{
       {
         id: 6,
         title: "4. XX a. pirmosios pusės totaliniai karai ir doktrinos",
+        important: true,
         thumbnail: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2Jmdm5yMjQxZDd0MG5rNmJnNHd0ODZ6bGgzMjNjdG8yODg4ZjhjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NJWbygFSnVhvq2pdKY/giphy.gif",
         date: "2026-06-03",
         author: "istorija.exe",
@@ -1107,6 +1128,7 @@ figure.blog-figure{
       {
         id: 7,
         title: "4.1 Totalinis karas ir idealizmo žlugimas tarpukariu",
+        important: true,
         thumbnail: "https://i.pinimg.com/originals/68/f2/6b/68f26ba6aa479d9b5d520b6745c05786.gif",
         date: "2026-06-09",
         author: "istorija.exe",
@@ -1150,6 +1172,7 @@ figure.blog-figure{
       {
         id: 14,
         title: "4.3 Nuo Verdeno iki Potsdamo: mūšiai ir paktų diplomatija",
+        important: true,
         thumbnail: "https://i.pinimg.com/736x/32/52/4e/32524e0f116192a85a7bb21a3fc2e5ba.jpg",
         date: "2026-06-11",
         author: "global.net",
@@ -1200,6 +1223,7 @@ figure.blog-figure{
       {
         id: 15,
         title: "5.1. Dvipolis pasaulis: Ideologinė kova ir Šaltojo karo sąvokos",
+        important: true,
          thumbnail: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWU0M2p5ZXgwOGg1djF4NDQzOG9kbzB2aXdxM24yM3Q2cHg2ZDdidSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uI0ffufWaDfXKXOat7/giphy.gif",
         date: "2026-06-12",
         author: "global.net",
@@ -1246,6 +1270,7 @@ figure.blog-figure{
       {
         id: 17,
         title: "5.3. Karai svetimomis rankomis ir technologijų lenktynės",
+        important: true,
         thumbnail: "https://i.pinimg.com/1200x/b4/8f/df/b48fdf6bd64b9d40b42abe993bf3e210.jpg",
         date: "2026-06-14",
         author: "istorija.exe",
@@ -1269,6 +1294,7 @@ figure.blog-figure{
       {
         id: 8,
         title: "6. Iššūkiai valstybingumui ir TS XX a. pab. – XXI a.",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/7a/16/8e/7a168e7ba39f8cad011fa4b27ab7f2c2.jpg",
         date: "2026-06-05",
         author: "global.net",
@@ -1288,6 +1314,7 @@ figure.blog-figure{
       {
         id: 18,
         title: "6.1. Naujoji pasaulio tvarka, posovietinė erdvė ir esminės sąvokos",
+        important: true,
          thumbnail: "https://i.pinimg.com/1200x/0d/9b/59/0d9b5968cdea80e8cd7419746e64e7a4.jpg",
         date: "2026-06-15",
         author: "global.net",
@@ -1310,6 +1337,7 @@ figure.blog-figure{
       {
         id: 19,
         title: "6.2. Lyderiai, formavę pasaulį nuo Šaltojo karo pabaigos iki šiandien",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/39/8b/38/398b38ae541996c1966e9c025618aadd.jpg",
         date: "2026-06-16",
         author: "diplomatija.io",
@@ -1339,6 +1367,7 @@ figure.blog-figure{
       {
         id: 20,
         title: "6.3. Karai pokomunistinėje erdvėje ir pasaulinis terorizmas",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/5e/a1/17/5ea1177b3bacf02e6981f803742bd0a1.jpg",
         date: "2026-06-17",
         author: "istorija.exe",
@@ -1363,6 +1392,7 @@ figure.blog-figure{
       {
         id: 9,
         title: "7. LDK karyba ir diplomatija XIII–XVIII a.",
+        important: true,
         thumbnail: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmo0cmxyM3Y5c20yaDR5ZjhoZHczamVvcW1zeWZsbGV4ZTEwc2llayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JrGjtU3MspjkDMnPV5/giphy.gif",
         date: "2026-06-06",
         author: "ldk.history",
@@ -1405,6 +1435,7 @@ figure.blog-figure{
       {
         id: 22,
         title: "7.2. Valstybės architektai: Mindaugo diplomatija ir Vytauto galybė",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/ce/cf/c5/cecfc538f9a601b9fac85b256636e561.jpg",
         date: "2026-06-19",
         author: "ldk.history",
@@ -1424,6 +1455,7 @@ figure.blog-figure{
       {
         id: 23,
         title: "7.3. Nuo Žalgirio triumfo iki valstybės padalijimų tragedijos",
+        important: true,
          thumbnail: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2FqdGNrYjdnYXo3ZXg4YXV6NzMyenh2cThzbmxsdW1iamc4eXMyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1BGS9frYlj7eNeORIz/giphy.gif",
         date: "2026-06-20",
         author: "istorija.exe",
@@ -1447,6 +1479,7 @@ figure.blog-figure{
       {
         id: 10,
         title: "8. Lietuvos valstybės sugrįžimas ir diplomatiniai sukrėtimai",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/12/4c/6f/124c6fcb278b5f159c8ee0eba04767c1.jpg",
         date: "2026-06-07",
         author: "istorija.exe",
@@ -1467,6 +1500,7 @@ figure.blog-figure{
       {
         id: 24,
         title: "8.1. Lietuvos sugrįžimas: Pripažinimo drama ir pagrindinės sąvokos",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/e9/9b/40/e99b404738bdf2a0aca39c4433f7b8a1.jpg",
         date: "2026-06-21",
         author: "istorija.exe",
@@ -1486,6 +1520,7 @@ figure.blog-figure{
       {
         id: 25,
         title: "8.2. Užsienio politikos architektai: Galvanauskas, Voldemaras, Urbšys",
+        important: true,
          thumbnail: "https://i.pinimg.com/originals/21/41/ae/2141ae7e86b8d8d12b3449d47a8ec4d4.gif",
         date: "2026-06-22",
         author: "diplomatija.io",
@@ -1503,6 +1538,7 @@ figure.blog-figure{
       {
         id: 26,
         title: "8.3. Geopolitinės sūpynės: Nuo Klaipėdos triumfo iki 1939 m. katastrofos",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/98/ad/b8/98adb8ecea4c8f4e6375ffda9abf2aa7.jpg",
         date: "2026-06-23",
         author: "istorija.exe",
@@ -1524,6 +1560,7 @@ figure.blog-figure{
       {
         id: 11,
         title: "9. Dviejų karų po pasaulinių karų palyginimas",
+        important: true,
          thumbnail: "https://i.pinimg.com/736x/b7/8b/ab/b78babac9d99fee2a1fba1c10b154c8c.jpg",
         date: "2026-06-08",
         author: "partizanai.net",
@@ -1568,6 +1605,7 @@ figure.blog-figure{
       {
         id: 28,
         title: "9.2. Keturi strategai: Nuo generalissimuso iki Miško brolių vadų",
+        important: true,
         thumbnail: "https://i.pinimg.com/1200x/49/33/bf/4933bfe10d4f17ccd013f80e63232274.jpg",
         date: "2026-06-25",
         author: "diplomatija.io",
@@ -1587,6 +1625,7 @@ figure.blog-figure{
       {
         id: 29,
         title: "9.3. Dviejų karų analizė: Nuo valstybės pergalės iki pasiaukojimo bunkeryje",
+        important: true,
         thumbnail: "https://i.pinimg.com/736x/44/97/ad/4497add2240a9ebcd89d7c263469bb1a.jpg",
         date: "2026-06-26",
         author: "istorija.exe",
@@ -1611,6 +1650,7 @@ figure.blog-figure{
       },
       {id: 30,
 title: "10. Šimtametis karas iš arčiau I dalis: Priežastys",
+       important: true,
        thumbnail: "https://i.pinimg.com/originals/48/18/cc/4818cc8e070ec7191a106bf3596c16c2.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -1645,6 +1685,7 @@ content: "Šimtametis karas buvo ilgas konfliktas tarp Anglijos ir Prancūzijos,
 {
   id: 31,
 title: "11. Šimtametis karas iš arčiau II dalis: Įvykiai",
+  important: true,
   thumbnail: "https://i.pinimg.com/736x/d4/bf/87/d4bf87750cddffaff348d64c2c0df1fc.jpg",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -1682,6 +1723,7 @@ content: "SVARBIAUSI ĮVYKIAI:\n\n" +
 {
   id: 32,
 title: "12. Šimtametis karas iš arčiau III dalis: Pasekmės",
+  important: true,
   thumbnail: "https://i.pinimg.com/originals/03/c3/7a/03c37af058790e73747c3d4a4c6799b7.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -1704,6 +1746,7 @@ content: "PASEKMĖS\n\n" +
 {
   id: 33,
 title: "13. Trisdešimties metų karas iš arčiau I dalis: Priežastys",
+  important: true,
   thumbnail: "https://i.pinimg.com/originals/e2/57/f1/e257f1a34339c8d8567912fde41290e6.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -1726,6 +1769,7 @@ content: "Trisdešimties metų karas vyko 1618–1648 m. daugiausia Šventojoje 
 {
   id: 34,
 title: "14. Trisdešimties metų karas iš arčiau II dalis: Įvykiai",
+  important: true,
   thumbnail: "https://i.pinimg.com/originals/92/45/20/924520d6c63bdd1ec29039f55ebd94b8.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -1762,6 +1806,7 @@ content: "SVARBIAUSI ĮVYKIAI:\n\n" +
 {
   id: 35,
 title: "15. Trisdešimties metų karas iš arčiau III dalis: Pasekmės",
+  important: true,
   thumbnail: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDF0bXE0ZzhoOXptdTl5NW02OG5yNno2cGpiNDZsdjludjlwMjFsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YocXyin7VSwRjpbwc3/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -1785,6 +1830,7 @@ content: "PASEKMĖS\n\n" +
 {id: 37,
 
 title: "17. Senųjų civilizacijų socialinė-ekonominė struktūra",
+ important: true,
  thumbnail: "https://i.pinimg.com/originals/e7/a6/f1/e7a6f15e251aef130451c8ae9891ed92.gif",
 date: "2026-06-24",
 
@@ -1863,6 +1909,7 @@ content: "SENŲJŲ CIVILIZACIJŲ SOCIALINĖ-EKONOMINĖ STRUKTŪRA\n\n" +
 id: 36,
 
 title: "16. Vienos kongresas ir Paryžiaus taikos konferencija: Palyginimas",
+  important: true,
  thumbnail: "https://i.pinimg.com/736x/77/77/4c/77774c2a18a7051e6745ad1fa99b6e6e.jpg",
 date: "2026-06-24",
 
@@ -1983,6 +2030,7 @@ content: "VIENOS KONGRESAS IR PARYŽIAUS TAIKOS KONFERENCIJA – PALYGINIMAS\n\n
 id: 38,
 
 title: "18. Viduramžių visuomenė ir socialinė struktūra",
+  important: true,
  thumbnail: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnVkYXY4YWU4MmpsZ25xeXIzbHcwdm1oaGk5ZDUxdml3aHF2OGRrYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vMcPdcz6fkpdC/giphy.gif",
 date: "2026-06-24",
 
@@ -2063,6 +2111,7 @@ content: "VIDURAMŽIŲ VISUOMENĖ IR SOCIALINĖ STRUKTŪRA\n\n" +
 id: 39,
 
 title: "19. Industrinė revoliucija ir XIX a. visuomenės pokyčiai",
+  important: true,
  thumbnail: "https://i.pinimg.com/736x/5c/af/4d/5caf4dd09bccc6940e0ce19e6252980a.jpg",
 date: "2026-06-24",
 
@@ -2155,6 +2204,7 @@ content: "INDUSTRINĖ REVOLIUCIJA IR XIX A. VISUOMENĖS POKYČIAI\n\n" +
 id: 40,
 
 title: "20. XX a. moderni visuomenė ir kova už žmogaus teises",
+  important: true,
 thumbnail: "https://i.pinimg.com/736x/3a/a3/18/3aa3182f181947fd8e6d717476e92220.jpg",
 date: "2026-06-24",
 
@@ -2239,6 +2289,7 @@ content: "XX A. MODERNI VISUOMENĖ IR KOVA UŽ ŽMOGAUS TEISES\n\n" +
 id: 41,
 
 title: "21. XX a. pasaulinės ekonomikos asimetrijos",
+  important: true,
 thumbnail: "https://i.pinimg.com/1200x/66/8e/8d/668e8d133c550f45501fbc341e4ffa6b.jpg",
 date: "2026-06-24",
 
@@ -2333,6 +2384,7 @@ content: "XX A. PASAULINĖS EKONOMIKOS ASIMETRIJOS\n\n" +
 id: 42,
 
 title: "22. LDK socialinė-ekonominė struktūra XIV–XVIII a.",
+  important: true,
 thumbnail: "https://i.pinimg.com/originals/7c/e8/d8/7ce8d8f7c54a92ad6f905c3b09ed791e.gif",
 date: "2026-06-24",
 
@@ -2436,6 +2488,7 @@ content: "LDK SOCIALINĖ-EKONOMINĖ STRUKTŪRA XIV–XVIII A.\n\n" +
       {
         id: 45,
 title: "25. XIX–XX a. pradžios Lietuvos visuomenės transformacija I dalis: Kaimas ir agrarinės reformos",
+        important: true,
         thumbnail: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW5zZTM5cjVibDVkenNrN2EwYTQybGVwNHU3dHA4bXRqODVscmZ2YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BGE0oddEBD3u6lO/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -2472,6 +2525,7 @@ content: "1. BAUDŽIAVOS PANAIKINIMAS (1861 M.):\n" +
       {
         id: 46,
 title: "26. XIX–XX a. pradžios Lietuvos visuomenės transformacija II dalis: Švietimas ir ekonomika",
+        important: true,
          thumbnail: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXFram03aXQ3dWZ2OW14Z2g1ZHlncWt4amo2ZjNtZDNrbG5ocGgwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SRn9TUPpFuQAU/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -2512,6 +2566,7 @@ content: "1. ŠVIETIMO KAITA:\n" +
       {
         id: 47,
 title: "27. Pasaulio Lietuva I dalis: Emigracijos bangos",
+        important: true,
         thumbnail: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRrYXQ0N2Nyd2x6NWZ5ZGRvbnh4eWp6cDd2bGZqeHE0bHJ0dHI4OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B89WOIYdD21dm/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -2582,6 +2637,7 @@ content: "1. LIETUVIŲ IŠEIVIJOS VEIKLA:\n" +
       {
         id: 49,
 title: "29. Okupuotos Lietuvos visuomenės naikinimas I dalis: Holokaustas",
+        important: true,
          thumbnail: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDdoMWYzcGw1ZTZheHIycjBjZG9nZmt1Zjh1ZjQ0bXpmcmU1bzkxeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AgaXMCnoSbNHa/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -2619,6 +2675,7 @@ content: "1. HOLOKAUSTAS LIETUVOJE:\n" +
       {
         id: 50,
 title: "30. Okupuotos Lietuvos visuomenės naikinimas II dalis: Sovietizacija ir trėmimai",
+        important: true,
          thumbnail: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3JhaWNwOGw2Y3h3NjR1aXIycWFtZ29kNHd4Znh1Z3htZjNvNmhoaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZgQcZwqpyDW4GxGwVQ/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -2656,6 +2713,7 @@ content: "1. SOVIETIZACIJA:\n" +
       {
         id: 51,
 title: "31. Posovietinė visuomenė ir jos transformacija",
+        important: true,
          thumbnail: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWdnb3VpbDdwenVjanp0bDlheXFsNGJucGxzajIyemg1aGcxOXpjZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fmeTX8AURI4co/giphy.gif",
 date: "2026-06-24",
 author: "istorija.exe",
@@ -2754,7 +2812,13 @@ content: "1. PEREINAMASIS LAIKOTARPIS PO 1990 M.:\n" +
           </div>
           <div class="footer">
             <span class="readlink" onclick="openModal(${post.id})">>> Read Full Post</span>
-            <div class="like"><span class="heart"></span> <span style="font-size:12px; font-weight:700; margin-left:4px;">Like</span></div>
+            <div class="like">
+  <span class="heart"></span>
+  <span style="font-size:12px; font-weight:700; margin-left:4px;">Like</span>
+  <span class="importance" data-hot="${post.important ? 'true' : 'false'}" title="Topic importance">
+    🔥
+  </span>
+</div>
           </div>
         </article>
       `).join('');
